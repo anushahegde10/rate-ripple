@@ -1,0 +1,6 @@
+.env
+config/db_config.ini
+data/bronze/*
+data/silver/*
+__pycache__/
+*.pyc
