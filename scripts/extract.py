@@ -25,7 +25,9 @@ END_DATE = date.today().strftime("%Y-%m-%d")  # always pulls latest data
 # BOC series codes — add new ones here without touching the logic below
 BOC_SERIES = {
     "policy_rate": "V39079",       # overnight rate - the main rate ripple trigger
-    "inflation_cpi": "V41690914"   # total CPI tracks inflation driven by rate cycle
+    "inflation_cpi": "V41690914" ,  # total CPI tracks inflation driven by rate cycle
+    "bond_yield_2yr": "BD.CDN.2YR.DQ.YLD",    # short term — tracks rate expectations
+    "bond_yield_10yr": "BD.CDN.10YR.DQ.YLD"   # long term — tracks growth outlook
 }
 
 # API endpoint — we inject the series code and dates dynamically
