@@ -30,6 +30,13 @@ BOC_SERIES = {
     "bond_yield_10yr": "BD.CDN.10YR.DQ.YLD"   # long term — tracks growth outlook
 }
 
+
+# Statistics Canada vector IDs — same concept as BOC series codes
+STATCAN_VECTORS = {
+    "housing_price_index": "v111955442"  # new housing price index — total canada
+}
+
+
 # API endpoint — we inject the series code and dates dynamically
 #BOC_URL = f"https://www.bankofcanada.ca/valet/observations/{BOC_SERIES}/json?start_date={START_DATE}&end_date={END_DATE}"
 
@@ -69,6 +76,41 @@ def extract_boc_series(name, series_code):
     
     print(f"Saved to {bronze_path}")
 
+
+# -------------------------------------------------------
+# Extract Statistics Canada data using vector ID
+# StatsCan API needs vector ID + number of periods
+# Saves raw JSON response to bronze — no changes
+# -------------------------------------------------------
+
+def extract_statcan_series(name, vector_id):
+    # StatsCan API returns latest N periods — we calculate how many months since 2005
+    periods = 252  # 21 years x 12 months = enough to cover 2005 to today
+
+    url = "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorsAndLatestNPeriods"
+    
+    # StatsCan API requires a POST request with vector ID and periods
+    payload = [{"vectorId": int(vector_id.replace("v", "")), "latestN": periods}]
+    
+    print(f"Calling StatsCan API for {name} ({vector_id})...")
+    
+    response = requests.post(url, json=payload)
+    
+    # stop immediately if something went wrong
+    if response.status_code != 200:
+        raise Exception(f"StatsCan API call failed for {name}. Status code: {response.status_code}")
+    
+    raw_data = response.json()
+    
+    print(f"Retrieved data for {name}")
+    
+    # save raw response to bronze — no changes
+    bronze_path = f"data/bronze/statcan_{name}_raw.json"
+    with open(bronze_path, "w") as f:
+        json.dump(raw_data, f, indent=2)
+    
+    print(f"Saved to {bronze_path}")
+
 # -------------------------------------------------------
 # Main — runs when you execute this script directly
 # -------------------------------------------------------
@@ -83,3 +125,9 @@ if __name__ == "__main__":
         extract_boc_series(name, series_code)
     
     print("All BOC extractions complete.")
+
+        # loop through all StatsCan series and extract each one
+    for name, vector_id in STATCAN_VECTORS.items():
+        extract_statcan_series(name, vector_id)
+    
+    print("All StatsCan extractions complete.")
