@@ -33,7 +33,8 @@ BOC_SERIES = {
 
 # Statistics Canada vector IDs — same concept as BOC series codes
 STATCAN_VECTORS = {
-    "housing_price_index": "v111955442"  # new housing price index — total canada
+    "housing_price_index": "v111955442" , # new housing price index — total canada
+    "construction_cost_toronto": "v1617912756"   # building construction price index — toronto as national proxy
 }
 
 
