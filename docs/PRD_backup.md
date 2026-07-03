@@ -8,7 +8,6 @@
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | V1.0 | May 2026 | Senior Analytics Professional | Initial PRD |
-| V1.1 | June 2026 | Senior Analytics Professional | Added city level drill down, construction cost source decisions, StatsCan API details |
 
 ---
 
@@ -88,7 +87,6 @@ Despite this clear connection, the relationship between monetary policy cycles a
 
 - [ ] Mortgage default extension using the same pipeline framework
 - [ ] Regional breakdown by province
-- [ ] City level construction cost drill down — Toronto as national proxy in Phase 1, expand to Vancouver, Calgary, Edmonton, Montreal, Ottawa in Phase 2
 - [ ] Auto and life insurance segments alongside P&C
 - [ ] Catastrophe event overlay from IBC as a separate dashboard panel
 
@@ -102,27 +100,16 @@ Despite this clear connection, the relationship between monetary policy cycles a
 
 ## 6. Data Sources
 
-| Source | Data | Access | Layer | Notes |
-|--------|------|--------|-------|-------|
-| Bank of Canada Valet API | Policy rate, CPI, 2yr bond yield, 10yr bond yield | Free REST API — GET request | Bronze → Silver → Gold | Series codes: V39079, V41690914, BD.CDN.2YR.DQ.YLD, BD.CDN.10YR.DQ.YLD |
-| Statistics Canada WDS API | Housing Price Index, Construction Cost Index | Free REST API — POST request | Bronze → Silver → Gold | HPI vector: v111955442. Construction cost table: 18-10-0289-01. Toronto used as national proxy for construction costs |
-| OSFI | P&C premiums, claims, loss ratios | Free Excel/PDF | Bronze → Silver → Gold | Industry level only — individual insurer data not available |
-| Insurance Bureau of Canada | Catastrophic loss events | Free public reports | Bronze → Silver → Gold | Used to separate rate cycle signal from catastrophe noise |
+| Source | Data | Access | Layer |
+|--------|------|--------|-------|
+| Bank of Canada Valet API | Policy rate history | Free REST API | Bronze → Silver → Gold |
+| Statistics Canada | Housing Price Index, CPI, construction costs | Free CSV + API | Bronze → Silver → Gold |
+| OSFI | P&C premiums, claims, loss ratios | Free Excel/PDF | Bronze → Silver → Gold |
+| Insurance Bureau of Canada | Catastrophic loss events | Free public reports | Bronze → Silver → Gold |
 
 ---
 
-## 7. Documented Analytical Decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| Annual granularity for all data | OSFI publishes annually. All sources standardized to annual to enable clean joins. BOC daily data averaged to annual in silver layer. |
-| Toronto as construction cost proxy | Building Construction Price Index does not publish a single Canada composite. Toronto is the largest market and most widely used proxy in Canadian research. City level expansion planned for Phase 2. |
-| Year over year percentage change for index comparisons | Different indexes use different base years. Percentage change removes base year dependency and makes all indexes directly comparable. |
-| 2yr vs 10yr bond yield for yield curve | Industry standard pair for monitoring yield curve inversion — a recession signal that preceded the 2022-2023 rate cycle. |
-
----
-
-## 8. Success Metrics
+## 7. Success Metrics
 
 This project is successful when:
 
@@ -134,29 +121,26 @@ This project is successful when:
 
 ---
 
-## 9. Assumptions & Constraints
+## 8. Assumptions & Constraints
 
 **Assumptions**
 - Annual data granularity is sufficient to identify meaningful rate cycle trends
 - OSFI industry-level data is representative of the broader Canadian P&C market
 - A 6-12 month lag between rate changes and insurance claim response is assumed
-- Toronto construction costs are representative of national trends
 
 **Constraints**
 - OSFI public data is industry-level only — individual insurer data is not publicly available
 - Causal relationships cannot be definitively proven — this project identifies correlations and patterns
-- Building Construction Price Index does not publish a single Canada level composite
-- HPI base year is December 2016. Construction Cost Index base year is 2023. Year over year change used for all comparisons to remove base year dependency.
+- Regional granularity is limited to provincial level based on available public data
 
 ---
 
-## 10. Out of Scope
+## 9. Out of Scope
 
 - Individual insurer financial data
 - Auto insurance or life insurance segments (Phase 1)
 - Real time data pipeline
 - Proprietary or licensed data sources
-- City level construction cost breakdown (Phase 2)
 
 ---
 
