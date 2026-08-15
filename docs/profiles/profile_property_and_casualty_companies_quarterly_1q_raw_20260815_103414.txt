@@ -1,0 +1,155 @@
+======================================================================
+DATA PROFILING REPORT
+======================================================================
+File         : property_and_casualty_companies_quarterly_1q_raw.csv
+File Size    : 563.82 MB
+Profiled At  : 2026-08-15 10:34:14
+Rows         : 1,604,330
+Columns      : 16
+Duplicate Rows: 0
+
+----------------------------------------------------------------------
+COLUMN OVERVIEW
+----------------------------------------------------------------------
+Column                                        Type            Nulls   Unique
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale                     int64               0       10
+Fiscal Quarter                                object              0       37
+Trimestre fiscal                              object              0       37
+Id                                            int64               0      178
+Total P&C Companies/FIs                       object              0      197
+Total Sociétés d’assurance multirisque/IFFs   object              0      197
+Industry Group                                object              0        3
+Groupe Sectoriel                              object              0        3
+Return/Relevé                                 object              0        1
+Return Title                                  object              0        1
+Titre du relevé                               object              0        1
+Data Point Address/Adresse de point de donnée object              0    1,117
+Data Point Address Label                      object              0    1,128
+Libellé de l'adresse du point de données      object              0    1,179
+FI Inactive Date/Date d'inactivité IFF        object              0        2
+Measure Value/Valeur de mesure                float64         5,316  242,280
+
+Columns with ZERO nulls (most reliable):
+  - Fiscal Year/Année fiscale
+  - Fiscal Quarter
+  - Trimestre fiscal
+  - Id
+  - Total P&C Companies/FIs
+  - Total Sociétés d’assurance multirisque/IFFs
+  - Industry Group
+  - Groupe Sectoriel
+  - Return/Relevé
+  - Return Title
+  - Titre du relevé
+  - Data Point Address/Adresse de point de donnée
+  - Data Point Address Label
+  - Libellé de l'adresse du point de données
+  - FI Inactive Date/Date d'inactivité IFF
+
+----------------------------------------------------------------------
+DATE / PERIOD RANGE
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale:
+  Earliest : 2014
+  Latest   : 2023
+
+Fiscal Quarter:
+  Earliest : Q1 - 2015
+  Latest   : Q4 - 2023
+
+Trimestre fiscal:
+  Earliest : T1 - 2015
+  Latest   : T4 - 2023
+
+FI Inactive Date/Date d'inactivité IFF:
+  Earliest : 2021-08-02
+  Latest   : 9999-12-31
+
+----------------------------------------------------------------------
+UNIQUE VALUES (columns with fewer than 20 unique values)
+----------------------------------------------------------------------
+
+Fiscal Year/Année fiscale (10 unique values):
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+
+Industry Group (3 unique values):
+  - Canadian Mortgage Insurers
+  - Canadian Property & Casualty
+  - Foreign Property & Casualty
+
+Groupe Sectoriel (3 unique values):
+  - Assurances multirisques canadiennes
+  - Assurances multirisques étrangères
+  - Assureurs hypothécaires canadien
+
+Return/Relevé (1 unique values):
+  - 1Q
+
+Return Title (1 unique values):
+  - 1Q - PC Quarterly
+
+Titre du relevé (1 unique values):
+  - 1Q - Relevés Trimenstriel PC
+
+FI Inactive Date/Date d'inactivité IFF (2 unique values):
+  - 2021-08-02
+  - 9999-12-31
+
+----------------------------------------------------------------------
+VALUE DISTRIBUTION (columns with fewer than 20 unique values)
+----------------------------------------------------------------------
+
+Fiscal Year/Année fiscale:
+  2016                                       12.3%
+  2015                                       12.3%
+  2018                                       12.2%
+  2017                                       12.2%
+  2019                                       12.1%
+  2020                                       12.1%
+  2021                                       11.9%
+  2022                                       11.8%
+  2014                                        2.6%
+  2023                                        0.5%
+
+Industry Group:
+  Canadian Property & Casualty               64.2%
+  Foreign Property & Casualty                35.1%
+  Canadian Mortgage Insurers                  0.7%
+
+Groupe Sectoriel:
+  Assurances multirisques canadiennes        64.2%
+  Assurances multirisques étrangères         35.1%
+  Assureurs hypothécaires canadien            0.7%
+
+FI Inactive Date/Date d'inactivité IFF:
+  9999-12-31                                100.0%
+  2021-08-02                                  0.0%
+
+----------------------------------------------------------------------
+NUMERIC COLUMN STATISTICS
+----------------------------------------------------------------------
+Column                                               Min             Max            Mean         Std Dev
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale                       2,014.00        2,023.00        2,018.38            2.38
+Id                                             27,822.00    1,000,014.00       69,187.23      187,160.38
+Measure Value/Valeur de mesure             -3,448,612.00  145,922,220.00      121,193.68    1,363,845.98
+
+----------------------------------------------------------------------
+SAMPLE ROWS (first 5)
+----------------------------------------------------------------------
+   Fiscal Year/Année fiscale Fiscal Quarter Trimestre fiscal       Id             Total P&C Companies/FIs           Total Sociétés d’assurance multirisque/IFFs                Industry Group                     Groupe Sectoriel Return/Relevé       Return Title               Titre du relevé Data Point Address/Adresse de point de donnée    Data Point Address Label Libellé de l'adresse du point de données FI Inactive Date/Date d'inactivité IFF  Measure Value/Valeur de mesure
+0                       2023      Q4 - 2023        T4 - 2023  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes            1Q  1Q - PC Quarterly  1Q - Relevés Trimenstriel PC                                     P20100101   Cash and Cash Equivalents  Trésorerie et équivalents de trésorerie                             9999-12-31                        249515.0
+1                       2023      Q4 - 2023        T4 - 2023  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes            1Q  1Q - PC Quarterly  1Q - Relevés Trimenstriel PC                                     P20100201             Inv. Inc. D & A                          Inv. Inc. D & A                             9999-12-31                         37354.0
+2                       2023      Q4 - 2023        T4 - 2023  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes            1Q  1Q - PC Quarterly  1Q - Relevés Trimenstriel PC                                     P20100401  Inv: Short Term  Inv. - CY            Inv : Inv. à court terme - CY                             9999-12-31                        119981.0
+3                       2023      Q4 - 2023        T4 - 2023  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes            1Q  1Q - PC Quarterly  1Q - Relevés Trimenstriel PC                                     P20100501   Inv: Bonds and Debentures          Inv : Obligations et débentures                             9999-12-31                       4064733.0
+4                       2023      Q4 - 2023        T4 - 2023  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes            1Q  1Q - PC Quarterly  1Q - Relevés Trimenstriel PC                                     P20100701           Inv: Pref. Shares                       Inv : Pref. Shares                             9999-12-31                        335396.0

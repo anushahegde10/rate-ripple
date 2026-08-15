@@ -1,0 +1,195 @@
+======================================================================
+DATA PROFILING REPORT
+======================================================================
+File         : property_and_casualty_companies_quarterly_pc2_raw.csv
+File Size    : 993.05 MB
+Profiled At  : 2026-08-15 10:22:40
+Rows         : 2,329,220
+Columns      : 16
+Duplicate Rows: 0
+
+----------------------------------------------------------------------
+COLUMN OVERVIEW
+----------------------------------------------------------------------
+Column                                        Type            Nulls   Unique
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale                     int64               0        4
+Fiscal Quarter                                object              0       13
+Trimestre fiscal                              object              0       13
+Id                                            int64               0      152
+Total P&C Companies/FIs                       object              0      155
+Total Sociétés d’assurance multirisque/IFFs   object              0      155
+Industry Group                                object              0        2
+Groupe Sectoriel                              object              0        2
+Return/Relevé                                 object              0        1
+Return Title                                  object              0        1
+Titre du relevé                               object              0        1
+Data Point Address/Adresse de point de donnée object              0    7,390
+Data Point Address Label                      object              0    1,882
+Libellé de l'adresse du point de données      object              0    2,170
+FI Inactive Date/Date d'inactivité IFF        object              0        1
+Measure Value/Valeur de mesure                float64             0  246,161
+
+Columns with ZERO nulls (most reliable):
+  - Fiscal Year/Année fiscale
+  - Fiscal Quarter
+  - Trimestre fiscal
+  - Id
+  - Total P&C Companies/FIs
+  - Total Sociétés d’assurance multirisque/IFFs
+  - Industry Group
+  - Groupe Sectoriel
+  - Return/Relevé
+  - Return Title
+  - Titre du relevé
+  - Data Point Address/Adresse de point de donnée
+  - Data Point Address Label
+  - Libellé de l'adresse du point de données
+  - FI Inactive Date/Date d'inactivité IFF
+  - Measure Value/Valeur de mesure
+
+----------------------------------------------------------------------
+DATE / PERIOD RANGE
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale:
+  Earliest : 2023
+  Latest   : 2026
+
+Fiscal Quarter:
+  Earliest : Q1 - 2023
+  Latest   : Q4 - 2025
+
+Trimestre fiscal:
+  Earliest : T1 - 2023
+  Latest   : T4 - 2025
+
+FI Inactive Date/Date d'inactivité IFF:
+  Earliest : 9999-12-31
+  Latest   : 9999-12-31
+
+----------------------------------------------------------------------
+UNIQUE VALUES (columns with fewer than 20 unique values)
+----------------------------------------------------------------------
+
+Fiscal Year/Année fiscale (4 unique values):
+  - 2023
+  - 2024
+  - 2025
+  - 2026
+
+Fiscal Quarter (13 unique values):
+  - Q1 - 2023
+  - Q1 - 2024
+  - Q1 - 2025
+  - Q1 - 2026
+  - Q2 - 2023
+  - Q2 - 2024
+  - Q2 - 2025
+  - Q3 - 2023
+  - Q3 - 2024
+  - Q3 - 2025
+  - Q4 - 2023
+  - Q4 - 2024
+  - Q4 - 2025
+
+Trimestre fiscal (13 unique values):
+  - T1 - 2023
+  - T1 - 2024
+  - T1 - 2025
+  - T1 - 2026
+  - T2 - 2023
+  - T2 - 2024
+  - T2 - 2025
+  - T3 - 2023
+  - T3 - 2024
+  - T3 - 2025
+  - T4 - 2023
+  - T4 - 2024
+  - T4 - 2025
+
+Industry Group (2 unique values):
+  - Canadian Property & Casualty
+  - Foreign Property & Casualty
+
+Groupe Sectoriel (2 unique values):
+  - Assurances multirisques canadiennes
+  - Assurances multirisques étrangères
+
+Return/Relevé (1 unique values):
+  - PC2
+
+Return Title (1 unique values):
+  - PC2 - P&C Supervisory Quarterly Return
+
+Titre du relevé (1 unique values):
+  - PC2 - P&C Relevé de surveillance trimestriel
+
+FI Inactive Date/Date d'inactivité IFF (1 unique values):
+  - 9999-12-31
+
+----------------------------------------------------------------------
+VALUE DISTRIBUTION (columns with fewer than 20 unique values)
+----------------------------------------------------------------------
+
+Fiscal Year/Année fiscale:
+  2025                                       32.5%
+  2024                                       32.1%
+  2023                                       27.9%
+  2026                                        7.4%
+
+Fiscal Quarter:
+  Q4 - 2024                                   8.6%
+  Q4 - 2025                                   8.4%
+  Q3 - 2024                                   8.4%
+  Q3 - 2025                                   8.3%
+  Q2 - 2024                                   8.1%
+  Q2 - 2025                                   8.1%
+  Q1 - 2025                                   7.8%
+  Q1 - 2026                                   7.4%
+  Q3 - 2023                                   7.1%
+  Q4 - 2023                                   7.1%
+  Q1 - 2024                                   7.0%
+  Q2 - 2023                                   7.0%
+  Q1 - 2023                                   6.7%
+
+Trimestre fiscal:
+  T4 - 2024                                   8.6%
+  T4 - 2025                                   8.4%
+  T3 - 2024                                   8.4%
+  T3 - 2025                                   8.3%
+  T2 - 2024                                   8.1%
+  T2 - 2025                                   8.1%
+  T1 - 2025                                   7.8%
+  T1 - 2026                                   7.4%
+  T3 - 2023                                   7.1%
+  T4 - 2023                                   7.1%
+  T1 - 2024                                   7.0%
+  T2 - 2023                                   7.0%
+  T1 - 2023                                   6.7%
+
+Industry Group:
+  Canadian Property & Casualty               74.8%
+  Foreign Property & Casualty                25.2%
+
+Groupe Sectoriel:
+  Assurances multirisques canadiennes        74.8%
+  Assurances multirisques étrangères         25.2%
+
+----------------------------------------------------------------------
+NUMERIC COLUMN STATISTICS
+----------------------------------------------------------------------
+Column                                               Min             Max            Mean         Std Dev
+----------------------------------------------------------------------
+Fiscal Year/Année fiscale                       2,023.00        2,026.00        2,024.19            0.93
+Id                                             27,822.00    1,000,013.00       90,023.97      225,318.16
+Measure Value/Valeur de mesure            -14,797,678.50  267,302,767.28       71,320.80    1,322,517.81
+
+----------------------------------------------------------------------
+SAMPLE ROWS (first 5)
+----------------------------------------------------------------------
+   Fiscal Year/Année fiscale Fiscal Quarter Trimestre fiscal       Id             Total P&C Companies/FIs           Total Sociétés d’assurance multirisque/IFFs                Industry Group                     Groupe Sectoriel Return/Relevé                            Return Title                               Titre du relevé Data Point Address/Adresse de point de donnée                                                            Data Point Address Label                                                                     Libellé de l'adresse du point de données FI Inactive Date/Date d'inactivité IFF  Measure Value/Valeur de mesure
+0                       2026      Q1 - 2026        T1 - 2026  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes           PC2  PC2 - P&C Supervisory Quarterly Return  PC2 - P&C Relevé de surveillance trimestriel                                    P400801005              PC2: Short Term Investments, Fair Value Through Profit or Loss (FVTPL)                       PC2: Placements à court terme, Juste valeur par le biais du compte de résultat (JVBCR)                             9999-12-31                      1389334.71
+1                       2026      Q1 - 2026        T1 - 2026  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes           PC2  PC2 - P&C Supervisory Quarterly Return  PC2 - P&C Relevé de surveillance trimestriel                                    P400801010  PC2: Short Term Investments, Fair Value Through Other Comprehensive Income (FVOCI)  PC2: Placements à court terme, Juste valeur par l'entremise des autres éléments du résultat global (JVAÉRG)                             9999-12-31                       357559.31
+2                       2026      Q1 - 2026        T1 - 2026  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes           PC2  PC2 - P&C Supervisory Quarterly Return  PC2 - P&C Relevé de surveillance trimestriel                                    P400801030                                         PC2: Short Term Investments, Amortized Cost                                                                   PC2: Placements à court terme, Coût amorti                             9999-12-31                        40527.00
+3                       2026      Q1 - 2026        T1 - 2026  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes           PC2  PC2 - P&C Supervisory Quarterly Return  PC2 - P&C Relevé de surveillance trimestriel                                    P400801035                PC2: Short Term Investments, Balance Sheet Value Col. 05+10+15+20+30                                           PC2: Placements à court terme, Valeur au bilan Col. 05+10+15+20+30                             9999-12-31                      1787421.02
+4                       2026      Q1 - 2026        T1 - 2026  1000012  Total Canadian Property & Casualty  Total sociétés d’assurances multirisques canadiennes  Canadian Property & Casualty  Assurances multirisques canadiennes           PC2  PC2 - P&C Supervisory Quarterly Return  PC2 - P&C Relevé de surveillance trimestriel                                    P400801065                            PC2: Short Term Investments, Market Value of Column (30)                                           PC2: Placements à court terme, Valeur de marché de la colonne (30)                             9999-12-31                        25199.00
